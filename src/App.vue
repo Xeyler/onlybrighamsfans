@@ -16,9 +16,9 @@ import router from "./router";
 
 const isLoggedIn = ref(false);
 
-let auth;
+const auth = getAuth();
+
 onMounted(() => {
-  auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     isLoggedIn.value = Boolean(user);
   })
