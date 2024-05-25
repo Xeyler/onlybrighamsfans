@@ -1,21 +1,25 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Register from "../views/Register.vue";
+import Login from "../views/Login.vue";
+import Home from "../views/Home.vue";
+import Paywall from "../views/Paywall.vue";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         { 
             path: "/",
-            component: () => import("../views/Home.vue"),
+            component: () => Home,
             meta: {
                 requiresAuth: true
             }
         },
-        { path: "/register", component: () => import("../views/Register.vue") },
-        { path: "/login", component: () => import("../views/Login.vue") },
+        { path: "/register", component: () => Register },
+        { path: "/login", component: () => Login },
         { 
             path: "/paywall",
-            component: () => import("../views/Paywall.vue"),
+            component: () => Paywall,
             meta: {
                 requiresAuth: true
             }

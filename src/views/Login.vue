@@ -7,7 +7,7 @@
     <button @click="signInWithGoogle">Sign In With Google</button>\
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useRouter } from "vue-router";
