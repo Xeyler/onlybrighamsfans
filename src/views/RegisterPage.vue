@@ -16,7 +16,7 @@ const router = useRouter();
 
 const register = () => {
     createUserWithEmailAndPassword(getAuth(), email.value, password.value)
-        .then((data) => {
+        .then(() => {
             router.push("/")
         })
         .catch((error) => {

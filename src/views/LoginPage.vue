@@ -18,7 +18,7 @@ const errorMessage = ref();
 
 const register = () => {
     signInWithEmailAndPassword(getAuth(), email.value, password.value)
-        .then((data) => {
+        .then(() => {
             router.push("/")
         })
         .catch((error) => {
@@ -41,13 +41,11 @@ const register = () => {
 
 const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
+    // TODO: catch errors.
     signInWithPopup(getAuth(), provider)
         .then((result) => {
             console.log(result.user);
             router.push("/");
-        })
-        .catch((error) => {
-
         });
 };
 </script>

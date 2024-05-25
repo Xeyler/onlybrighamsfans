@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import Register from "../views/Register.vue";
-import Login from "../views/Login.vue";
-import Home from "../views/Home.vue";
-import Paywall from "../views/Paywall.vue";
+import Register from "../views/RegisterPage.vue";
+import Login from "../views/LoginPage.vue";
+import Home from "../views/HomePage.vue";
+import Paywall from "../views/PaywallPage.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -28,7 +28,7 @@ const router = createRouter({
 });
 
 const getCurrentUser = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const removeListener = onAuthStateChanged(
             getAuth(),
             (user) => {
